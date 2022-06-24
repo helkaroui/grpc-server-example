@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+option java_multiple_files = true;
+option java_package = "example.myapp.helloworld.grpc";
+option java_outer_classname = "EchoProto";
+
+package helloworld;
+
+service EchoService {
+
+  rpc Echo (EchoRequest) returns (EchoReply) {}
+}
+
+message EchoRequest {
+  string value = 1;
+}
+
+message EchoReply {
+  string value = 1;
+}
